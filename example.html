@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Owl Carousel v1 Accessibility Layer Demo</title>
+	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="../owlcarousel1-pseudoplugins/owlcarousel-plugin.js"></script>
+	<script type="text/javascript" src="owlcarousel-thumbnails.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.css" />
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.css" />
+
+	<style>
+	.owl-theme .owl-pagination {
+		max-height: 138px;
+		overflow-x: hidden;
+		overflow-y: hidden;
+		white-space: nowrap;
+	}
+
+	.owl-theme .owl-pagination .owl-page {
+		display: inline-block;
+	}
+
+	.owl-theme .owl-pagination .owl-page span {
+		display: none;
+	}
+
+	.owl-theme .owl-pagination .owl-page img {
+		max-height: 138px;
+	}
+
+	.test-item img {
+		height: 500px;
+		display: block;
+		margin: 0 auto;
+	}
+
+	.test-item .thumbnail-content {
+		display: none;
+	}
+	</style>
+</head>
+<body>
+	
+	<div class="oc-container">
+		<div class="test-item">
+			<img src="http://placekitten.com/g/1920/1080" />
+			<div class="thumbnail-content" hidden aria-hidden="true">
+				<img src="http://placekitten.com/g/1920/1080" />
+			</div>
+		</div>
+		<div class="test-item">
+			<img src="http://placekitten.com/g/1280/1024" />
+			<div class="thumbnail-content" hidden aria-hidden="true">
+				<img src="http://placekitten.com/g/1280/1024" />
+			</div>
+		</div>
+		<div class="test-item">
+			<img src="http://placekitten.com/g/1920/1080" />
+			<div class="thumbnail-content" hidden aria-hidden="true">
+				<img src="http://placekitten.com/g/1920/1080" />
+			</div>
+		</div>
+		<div class="test-item">
+			<img src="http://placekitten.com/g/1280/1024" />
+			<div class="thumbnail-content" hidden aria-hidden="true">
+				<img src="http://placekitten.com/g/1280/1024" />
+			</div>
+		</div>
+		<div class="test-item">
+			<img src="http://placekitten.com/g/1920/1080" />
+			<div class="thumbnail-content" hidden aria-hidden="true">
+				<img src="http://placekitten.com/g/1920/1080" />
+			</div>
+		</div>
+		<div class="test-item">
+			<img src="http://placekitten.com/g/1280/1024" />
+			<div class="thumbnail-content" hidden aria-hidden="true">
+				<img src="http://placekitten.com/g/1280/1024" />
+			</div>
+		</div>
+	</div>
+
+	<div id="debug">
+	</div>
+
+	<script>
+		$(document).ready(function(){
+			var settings = {
+				navigation: true,
+				paginationNumbers: false,
+				thumbnailSelector: '.thumbnail-content',
+				singleItem: true
+			};
+			OwlThumbs.Plugin.applyTo(settings);
+			$(".oc-container").owlCarousel(settings);
+		});
+	</script>
+
+</body>
+</html>
